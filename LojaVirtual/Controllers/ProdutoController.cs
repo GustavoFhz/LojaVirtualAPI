@@ -87,7 +87,12 @@ namespace LojaVirtual.Controllers
             return Ok(produto);
         }
 
-        
+        [HttpDelete]
+        public async Task<IActionResult> RemoverProduto(int id)
+        {
+            var produto = await _produtoInterface.RemoverProduto(id);
+            return Ok(produto);
+        }
 
     }
 }
